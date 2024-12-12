@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavuma Anthony - Final Exam</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #070707;
+            color: rgb(30, 190, 65);
+            font-family: 'Arial', sans-serif;
+        }
+        .header {
+            background-color: #4aafdd;
+            color: white;
+        }
+        img {
+            object-fit: cover;
+        }
+        #profileImage {
+            width: 100%;
+            height: 300px;
+        }
+        .details ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .details li a {
+            color: #0d6efd;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            background-color: #0d6efd;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header text-white py-3 text-center">
+            <h1>Kavuma Anthony- Final Exam</h1>
+        </div>
+
+        <div class="row my-4">
+            <!-- Image Section -->
+            <div class="col-md-6 text-center">
+                <h4>Profile Picture</h4>
+                <img id="profileImage" src="./images//me.jpg" alt="Profileimages/me1 (1).jpg Picture" class="img-fluid rounded">
+                <div class="mt-3">
+                    <button id="prevImage" class="btn btn-outline-light">Previous Image</button>
+                    <button id="nextImage" class="btn btn-outline-light">Next Image</button>
+                </div>
+            </div>
+
+            <!-- Details Section -->
+            <div class="col-md-6 details">
+                <h4>Your Details</h4>
+                <ul>
+                    <li>Name: Kavuma Anthony</li>
+                    <li>Reg No: 22/DIT/BU/R/0020</li>
+                    <li>Exam No: 24SEM/BU/EXAM2895</li>
+                    <li>Email: <a href="mailto:kavumaanthony2@gmail.com">kavumaanthony2@gmail.com</a></li>
+                    <li>Phone Contact: +256 756381978</li>
+                    <li>GitHub: <a href="https://github.com/your-username" target="_blank">your-username</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <!-- Exam Clearance Form -->
+            <div class="col-md-12 text-center">
+                <h4>Exam Clearance Form</h4>
+                <img src="/images/exam pass.jpg" alt="Exam Clearance Form" class="img-fluid rounded">
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <!-- Links Section -->
+            <div class="col-md-6 text-center">
+                <h5>Personal Website Links:</h5>
+                <a href="https://your-github-pages-link" target="_blank">GitHub Pages</a> |
+                <a href="https://your-netlify-link" target="_blank">Netlify</a>
+            </div>
+
+            <div class="col-md-6 text-center">
+                <h5>Organizational Website Links:</h5>
+                <a href="https://example-link-a.com" target="_blank">Link A</a> |
+                <a href="https://example-link-b.com" target="_blank">Link B</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer py-3 text-center">
+            <p>Designed by Kavuma Anthony</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const images = ["/images/me.JPG", "/images/me2.JPG", "/images/me3.JPG"];
+        let currentIndex = 0;
+
+        const profileImage = document.getElementById("profileImage");
+        const prevImage = document.getElementById("prevImage");
+        const nextImage = document.getElementById("nextImage");
+
+        prevImage.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            profileImage.src = images[currentIndex];
+        });
+
+        nextImage.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            profileImage.src = images[currentIndex];
+        });
+    </script>
+</body>
+</html>
